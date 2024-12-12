@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'my secret key'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['95767665-e368-4035-9749-08dd2d209785-00-1i8jhu285v401.picard.replit.dev']
 CSRF_TRUSTED_ORIGINS = ['https://95767665-e368-4035-9749-08dd2d209785-00-1i8jhu285v401.picard.replit.dev']

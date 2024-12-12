@@ -7,4 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('contacts.urls')),
     path('',include('account.urls')),
+    
 ]
+
+handler404 = views.custom_404_view
