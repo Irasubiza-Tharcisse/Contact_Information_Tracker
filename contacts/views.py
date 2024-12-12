@@ -1,45 +1,10 @@
 from django.shortcuts import render ,redirect,get_object_or_404
 from django.contrib.auth.models import User
-from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Contact
 # Create your views here.
 
-def login_F(request):
-  if request.method == 'POST':
-    username = request.POST.get('username')
-    password = request.POST.get('password')
-    user_active = authenticate(username=username, password=password)
-    if user_active is not None and user_active.is_staff:
-      login(request,user_active)
-      return redirect('profile')
-
-    messages.error(request, f'hello {username}, check your username and password')
-    return render(request, 'account/login.html')
-  else:
-    messages.error(request, 'invalid username or password')
-    return render(request, 'account/login.html')
-
-
-def login_view(request):
-    return render(request, 'account/login.html')
-
-#Admin dashboard 
-@login_required
-def profile_view(request):
-  user_active = request.user
-  context={
-    'username': user_active.username,
-  }
-  return render(request, 'contacts/profile.html',context)
-
-
-
-#logout
-def logout_view(request):
-  logout(request)
-  return redirect('login_page')
 
 
 # all contacts

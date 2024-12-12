@@ -26,8 +26,8 @@ SECRET_KEY = 'my secret key'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['d097e774-87ef-421e-ac8b-45a0d83d0dc1-00-8cbk60bfioco.riker.repl.co','d097e774-87ef-421e-ac8b-45a0d83d0dc1-00-8cbk60bfioco.riker.replit.dev']
-CSRF_TRUSTED_ORIGINS = ['https://d097e774-87ef-421e-ac8b-45a0d83d0dc1-00-8cbk60bfioco.riker.repl.co','https://d097e774-87ef-421e-ac8b-45a0d83d0dc1-00-8cbk60bfioco.riker.replit.dev']
+ALLOWED_HOSTS = ['95767665-e368-4035-9749-08dd2d209785-00-1i8jhu285v401.picard.replit.dev']
+CSRF_TRUSTED_ORIGINS = ['https://95767665-e368-4035-9749-08dd2d209785-00-1i8jhu285v401.picard.replit.dev']
 
 # Application definition
 

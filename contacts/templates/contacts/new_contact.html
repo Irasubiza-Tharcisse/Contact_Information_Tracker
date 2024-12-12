@@ -1,10 +1,11 @@
-{% extends 'contacts/profile.html' %}
+{% extends 'account/admin_profile.html' %}
 {% load static %}
 {% block content %}
 <style>
   .container {
       max-width: 400px; /* Set a maximum width for the form */
       width: 100%; /* Allow the form to be responsive */
+      height: 70vh;
       padding-bottom: 30px;
   }
   .form-control {
@@ -12,7 +13,7 @@
       width: 100%; /* Ensure inputs take full width */
   }
 </style>
-<body>
+
                   <div class="container mt-5">
                       <h2>Create New Contact</h2>
                       {% if messages %}
@@ -62,5 +63,5 @@
                           <a href="{% url 'all_contacts' %}" class="btn btn-secondary">Cancel</a>
                       </form>
                   </div>
-</body>
+
 {% endblock %}

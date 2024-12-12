@@ -1,6 +1,16 @@
-{% extends 'contacts/profile.html' %}
+{% extends 'account/admin_profile.html' %}
 {% block content %}
+
 <h2>All Contacts  <a href="{% url 'new_contact'  %}">New contact</a>    </h2>
+
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+  {% endfor %}
+</ul>
+{% endif %}
+
 <table class="table table-bordered">
     <thead>
         <tr>
