@@ -12,9 +12,9 @@ from django.contrib import messages
 @login_required
 def all_users_view(request):
   users = User.objects.all()
-  user = request.user
+  user_active = request.user
   context={
-    'username': user.username,
+    'username': user_active.username,
     'users': users,
   }
   return render(request, 'account/all_users.html',context)
@@ -34,8 +34,9 @@ def edit_user_view(request, user_id):
     messages.success(request, f'Account for {user.username} was updated successfully')
     return redirect('all_users')
   else:
+    user_active = request.user
     context={
-      'username': user.username,
+      'username': user_active.username,
       'user': user,
     }
     return render(request,'account/confirm_edit.html',context)
@@ -48,6 +49,10 @@ def delete_user(request, user_id):
       messages.success(request, 'User deleted successfully!')
       return redirect('all_users')  # Redirect to the user management page
 
-  return render(request, 'account/confirm_delete.html', {'user': user})
+  user_active = request.user
+  context ={
+    'username': user_active.username,
+  }
+  return render(request, 'account/confirm_delete.html', context)
 
 

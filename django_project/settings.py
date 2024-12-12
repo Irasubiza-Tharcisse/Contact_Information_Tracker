@@ -27,7 +27,7 @@ SECRET_KEY = 'my secret key'
 DEBUG = True
 
 ALLOWED_HOSTS = ['d097e774-87ef-421e-ac8b-45a0d83d0dc1-00-8cbk60bfioco.riker.repl.co','d097e774-87ef-421e-ac8b-45a0d83d0dc1-00-8cbk60bfioco.riker.replit.dev']
-CSRF_TRUSTED_ORIGINS = ['https://d097e774-87ef-421e-ac8b-45a0d83d0dc1-00-8cbk60bfioco.riker.repl.co']
+CSRF_TRUSTED_ORIGINS = ['https://d097e774-87ef-421e-ac8b-45a0d83d0dc1-00-8cbk60bfioco.riker.repl.co','https://d097e774-87ef-421e-ac8b-45a0d83d0dc1-00-8cbk60bfioco.riker.replit.dev']
 
 # Application definition
 

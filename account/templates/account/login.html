@@ -24,6 +24,7 @@
 <!--===============================================================================================-->
   <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %} ">
   <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %} ">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/message.css' %} ">
 <!--===============================================================================================-->
 </head>
 <body>
@@ -31,6 +32,13 @@
   <div class="limiter">
     <div class="container-login100">
       <div class="wrap-login100">
+        {% if messages %}
+        <ul class="messages">
+          {% for message in messages %}
+          <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
         <form  action="{% url 'login' %}" method="POST" class="login100-form validate-form p-l-55 p-r-55 p-t-178">
           {% csrf_token %}
           <span class="login100-form-title">
