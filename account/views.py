@@ -16,7 +16,10 @@ def login_F(request):
     if user_active is not None and user_active.is_staff:
       login(request,user_active)
       return redirect('profile')
-
+    elif user_active is not None and not user_active.is_staff:
+      login(request,user_active)
+      return redirect('user_profile')
+      
     messages.error(request, f'hello {username}, check your username and password')
     return render(request, 'account/login.html')
   else:
@@ -44,6 +47,13 @@ def admin_profile_view(request):
   return render(request, 'account/admin_profile.html',context)
 
 
+# user profile
+def user_profile_view(request):
+  user_active = request.user
+  context={
+    'username': user_active.username,
+  }
+  return render(request, 'account/user_profile.html',context)
 
 
 
